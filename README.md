@@ -14,6 +14,12 @@ Dengan composer
 composer install
 ```
 
+## Migrate dan seed
+```bash
+php artisan migrate
+php artisan db:seed --class=CategorySeeder
+```
+
 ## Run
 ```bash
 php artisan serve
