@@ -13,6 +13,29 @@ Dengan composer
 ```bash
 composer install
 ```
+## Setup
+### Database Connection
+edit file `.env.example` menjadi `.env`
+lalu edit:
+
+```dotenv
+DB_CONNECTION=sqlite
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=laravel
+# DB_USERNAME=root
+# DB_PASSWORD=
+```
+dengan setup database anda
+contoh dengan setup default postgresql
+```dotenv
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=postgres
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+```
 
 ## Migrate dan seed
 ```bash
@@ -26,6 +49,19 @@ php artisan serve
 ```
 
 ## Testing
+idealnya untuk melakukan testing menggunakan database khusus untuk operasi testing
+buat file `.env.testing` (bisa dengan mengcopy `.env` atau `.env.example`) kemudian edit setup database
+contoh dengan menggunakan postgres
+```dotenv
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=testing
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+```
+lalu run
+
 ```bash
 php artisan test
 ```
