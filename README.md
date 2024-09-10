@@ -37,7 +37,7 @@ DB_USERNAME=postgres
 DB_PASSWORD=postgres
 ```
 
-## Migrate dan seed
+### Migrate dan seed
 ```bash
 php artisan migrate
 php artisan db:seed --class=CategorySeeder
