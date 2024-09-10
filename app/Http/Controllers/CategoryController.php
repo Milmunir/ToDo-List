@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         try {
-            $result = category::all();
+            $result = category::all()->select("id", "name");
             return response()->json($result, 200);
         } catch (QueryException $e) {
             return response()->json(['error' => 'Database error'], 500);
